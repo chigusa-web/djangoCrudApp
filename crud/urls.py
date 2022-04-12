@@ -6,4 +6,7 @@ urlpatterns = [
 
     # 一覧
     path("", views.ProductListView.as_view(), name="list"),
+
+    # 新規登録
+    path('new/', views.ProductCreateView.as_view(), name='new'),
 ]
