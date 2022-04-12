@@ -1,6 +1,7 @@
 from .models import Product
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -37,3 +38,14 @@ class ProductUpdateView(UpdateView):
 
     # テンプレートファイル名の接尾辞の指定
     template_name_suffix = '_update_form'
+
+
+class ProductDeleteView(DeleteView):
+    """
+    削除
+    """
+
+    model = Product
+
+    # 削除完了後のリダイレクト先
+    success_url = reverse_lazy('crud:list')

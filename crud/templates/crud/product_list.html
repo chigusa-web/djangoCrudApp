@@ -16,6 +16,7 @@
         <td>{{ product.price }} 円</td>
         <td>
             <a href="{% url 'crud:edit' pk=product.pk %}">編集</a>
+            <a href="{% url 'crud:delete' pk=product.pk %}">削除</a>
         </td>
     </tr>
     {% endfor %}

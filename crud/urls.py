@@ -12,4 +12,7 @@ urlpatterns = [
 
     # 編集
     path('edit/<int:pk>/', views.ProductUpdateView.as_view(), name='edit'),
+
+    # 削除
+    path('delete/<int:pk>/', views.ProductDeleteView.as_view(), name='delete'),
 ]
