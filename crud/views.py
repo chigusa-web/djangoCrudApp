@@ -14,6 +14,9 @@ class ProductListView(ListView):
     # 一覧を表示するモデルを指定する
     model = Product
 
+    # 1ページの件数
+    paginate_by = 5
+
 
 class ProductCreateView(CreateView):
     """
