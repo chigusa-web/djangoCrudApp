@@ -1,6 +1,6 @@
 from .models import Product
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 
 # Create your views here.
 
@@ -23,3 +23,17 @@ class ProductCreateView(CreateView):
 
     # 登録項目
     fields = ['name', 'price']
+
+
+class ProductUpdateView(UpdateView):
+    """
+    編集
+    """
+
+    model = Product
+
+    # 更新項目
+    fields = ['name', 'price']
+
+    # テンプレートファイル名の接尾辞の指定
+    template_name_suffix = '_update_form'

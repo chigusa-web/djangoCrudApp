@@ -7,12 +7,16 @@
         <tr>
             <td>商品名</td>
             <td>価格</td>
+            <td></td>
         </tr>
     </thead>
     {% for product in object_list %}
     <tr>
         <td>{{ product.name }}</td>
         <td>{{ product.price }} 円</td>
+        <td>
+            <a href="{% url 'crud:edit' pk=product.pk %}">編集</a>
+        </td>
     </tr>
     {% endfor %}
 </table>

@@ -1,0 +1,9 @@
+<h1>編集</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <a href="{% url 'crud:list' %}">戻る</a>
+    <input type="submit" value="編集">
+</form>

@@ -9,4 +9,7 @@ urlpatterns = [
 
     # 新規登録
     path('new/', views.ProductCreateView.as_view(), name='new'),
+
+    # 編集
+    path('edit/<int:pk>/', views.ProductUpdateView.as_view(), name='edit'),
 ]
