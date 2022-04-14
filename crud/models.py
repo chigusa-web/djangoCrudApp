@@ -6,8 +6,8 @@ from django.urls import reverse
 
 class Product(models.Model):
 
-    name = models.CharField(max_length=200)
-    price = models.IntegerField()
+    name = models.CharField(max_length=200, verbose_name="商品名")
+    price = models.IntegerField(verbose_name="価格")
 
     def __str__(self):
         return self.name

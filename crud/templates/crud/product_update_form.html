@@ -1,9 +1,24 @@
+{% extends 'crud/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
 <h1>編集</h1>
 
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
 
-    <a href="{% url 'crud:list' %}">戻る</a>
-    <input type="submit" value="編集">
+    <div class="mb-3">
+        {{ form.name|add_label_class:"form-label" }}
+        {{ form.name|add_class:"form-control" }}
+
+        {{ form.price|add_label_class:"form-label" }}
+        {{ form.price|add_class:"form-control" }}
+    </div>
+
+    <a class="btn btn-secondary" href="{% url 'crud:list' %}">戻る</a>
+    <input class="btn btn-primary" type="submit" value="編集">
 </form>
+
+{% endblock %}

@@ -1,12 +1,23 @@
+{% extends 'crud/base.html' %}
+
+{% block content %}
+
 <h1>削除</h1>
 
 <form method="post">
     {% csrf_token %}
 
-    以下の商品を削除してもよろしいですか？<br>
-    {{ object }}<br>
+    <div class="alert alert-danger" role="alert">
+        以下の商品を削除してもよろしいですか？
+    </div>
+
+    <div class="alert alert-light" role="alert">
+        {{ object }}
+    </div>
 
     {{ form }}
-    <a href="{% url 'crud:list' %}">戻る</a>
-    <input type="submit" value="削除">
+    <a class="btn btn-secondary" href="{% url 'crud:list' %}">戻る</a>
+    <input class="btn btn-danger" type="submit" value="削除">
 </form>
+
+{% endblock %}
